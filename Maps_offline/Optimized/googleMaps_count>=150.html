@@ -1,0 +1,84 @@
+<!DOCTYPE html >
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Result of anomaly detection
+      </title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+
+<html>
+  <body>
+    <div id="map"></div>
+
+    <script>
+        function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: new google.maps.LatLng(50.061389, 19.938333),
+          zoom: 12
+        });
+        
+        var markers = [[50.0666, 19.96],
+                    [50.0642,19.9877],
+                    [50.0479,19.9092],
+                    [50.0578,19.9581],
+                    [50.0651,19.9588],
+                    [50.0545,19.9765],
+                    [50.0532,19.9602],
+                    [50.0717,19.9832],
+                    [50.0593,19.9232],
+                    [50.0534,19.9599],
+                    [50.0532,19.9601],
+                    [50.0539,19.9598],
+                    [50.0666,19.9601],
+                    [50.0593,19.9231],
+                    [50.0592,19.9237],
+                    [50.0658,19.9593],
+                    [50.0711,19.9842],
+                    [50.0656,19.9595],
+                    [50.0657,19.9593],
+                    [50.049,19.9313],
+                    [50.0651,19.9589],
+                    [50.062,19.9827],
+                    [50.0486,19.9678],
+                    [50.0501,19.935],
+                    [50.0658,19.9594],
+                    [50.0638,19.9234],
+                    [50.0577,19.9582],
+                    [50.0592,19.9231],
+                    [50.0656,19.9141]
+
+                    ];
+            
+        markers.forEach(function(entry) {
+        var point = new google.maps.LatLng(
+                  parseFloat(entry[0]),
+                  parseFloat(entry[1]));
+
+              var marker = new google.maps.Marker({
+                map: map,
+                position: point
+                });
+              });
+            
+        }
+
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmXbUNmc9hVvOMg3xvDAkDXHzgkczBYYY&callback=initMap">
+    </script>
+  </body>
+
+</html>
